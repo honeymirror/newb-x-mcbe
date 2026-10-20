@@ -1,0 +1,6 @@
+# NewBx shader sources use .sc, .h, .sh, and .dragonh extensions.
+# They are GLSL-family shader code, not Scala, C, Shell, or SuperCollider.
+*.sc linguist-language=GLSL
+*.h linguist-language=GLSL
+*.sh linguist-language=GLSL
+*.dragonh linguist-language=GLSL
