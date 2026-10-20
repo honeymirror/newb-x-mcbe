@@ -1,0 +1,11 @@
+{
+  "name": "RDL_Gamma",
+  "type": "vec4",
+  "count": 1,
+  "default": [
+    1.33,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

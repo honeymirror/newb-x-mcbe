@@ -1,0 +1,901 @@
+{
+  "options": [
+    {
+      "type": "select",
+      "macro": "NL_TONEMAP_TYPE",
+      "default": "Extended Reinhard",
+      "macroMap": {
+        "Exponential": 1.0,
+        "Reinhard": 2.0,
+        "Extended Reinhard": 3.0,
+        "ACES": 4.0
+      },
+      "group": "Color correction",
+      "langKey": "option.NL_TONEMAP_TYPE"
+    },
+    {
+      "type": "vec4",
+      "macro": "NL_GAMMA",
+      "min": 0.3,
+      "max": 2.0,
+      "default": 1.33,
+      "step": 0.01,
+      "group": "Color correction",
+      "langKey": "option.NL_GAMMA",
+      "kind": "uniform",
+      "control": "slider",
+      "material": "*",
+      "uniform": "RDL_Gamma",
+      "components": [
+        0
+      ]
+    },
+    {
+      "type": "vec4",
+      "macro": "NL_EXPOSURE",
+      "min": 0.5,
+      "max": 3.0,
+      "default": 1.3,
+      "step": 0.01,
+      "group": "Color correction",
+      "langKey": "option.NL_EXPOSURE",
+      "kind": "uniform",
+      "control": "slider",
+      "material": "*",
+      "uniform": "RDL_Exposure",
+      "components": [
+        0
+      ]
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SATURATION",
+      "min": 0.0,
+      "max": 2.8,
+      "default": 1.4,
+      "step": 0.01,
+      "group": "Color correction",
+      "langKey": "option.NL_SATURATION"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_TINT",
+      "default": false,
+      "group": "Color correction",
+      "langKey": "option.NL_TINT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SUNLIGHT_INTENSITY",
+      "min": 1.0,
+      "max": 5.0,
+      "default": 3.3,
+      "step": 0.01,
+      "group": "Lighting",
+      "langKey": "option.NL_SUNLIGHT_INTENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_TORCHLIGHT_INTENSITY",
+      "min": 0.5,
+      "max": 3.0,
+      "default": 1.0,
+      "step": 1.0,
+      "group": "Lighting",
+      "langKey": "option.NL_TORCHLIGHT_INTENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SHADOW_INTENSITY",
+      "min": 0.0,
+      "max": 1.4,
+      "default": 0.7,
+      "step": 0.01,
+      "group": "Lighting",
+      "langKey": "option.NL_SHADOW_INTENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_MIN_LIGHTING_BOOST",
+      "min": 0.0,
+      "max": 3.0,
+      "default": 1.5,
+      "step": 0.01,
+      "group": "Lighting",
+      "langKey": "option.NL_MIN_LIGHTING_BOOST"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_BLINKING_TORCH",
+      "default": false,
+      "group": "Lighting",
+      "langKey": "option.NL_BLINKING_TORCH"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_CLOUD_SHADOW",
+      "default": true,
+      "group": "Lighting",
+      "langKey": "option.NL_CLOUD_SHADOW"
+    },
+    {
+      "type": "vec4",
+      "macro": "NL_MIST_DENSITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.18,
+      "step": 0.01,
+      "group": "Fog",
+      "langKey": "option.NL_MIST_DENSITY",
+      "kind": "uniform",
+      "control": "slider",
+      "material": "*",
+      "uniform": "RDL_MistDensity",
+      "components": [
+        0
+      ]
+    },
+    {
+      "type": "vec4",
+      "control": "slider",
+      "kind": "uniform",
+      "name": "NL_FOG_STRENGTH",
+      "macro": "NL_FOG_STRENGTH",
+      "material": "*",
+      "uniform": "RDL_FogStrength",
+      "components": [
+        0
+      ],
+      "min": 0.0,
+      "max": 1.5,
+      "default": 1.0,
+      "step": 0.01,
+      "group": "Fog",
+      "langKey": "option.NL_FOG_STRENGTH"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SKY_VOID_FACTOR",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.5,
+      "step": 0.01,
+      "group": "Sky",
+      "langKey": "option.NL_SKY_VOID_FACTOR"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SKY_VOID_DARKNESS",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.3,
+      "step": 0.01,
+      "group": "Sky",
+      "langKey": "option.NL_SKY_VOID_DARKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SKY_RAIN_MIX_FACTOR",
+      "min": 0.0,
+      "max": 1.8,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Sky",
+      "langKey": "option.NL_SKY_RAIN_MIX_FACTOR"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_RAINBOW",
+      "default": true,
+      "group": "Rainbow",
+      "langKey": "option.NL_RAINBOW"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_RAINBOW_CLEAR",
+      "min": 0.3,
+      "max": 1.0,
+      "default": 0.0,
+      "step": 1.0,
+      "group": "Rainbow",
+      "langKey": "option.NL_RAINBOW_CLEAR"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_RAINBOW_RAIN",
+      "min": 0.3,
+      "max": 1.0,
+      "default": 0.4,
+      "step": 0.01,
+      "group": "Rainbow",
+      "langKey": "option.NL_RAINBOW_RAIN"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GLOW_TEX",
+      "min": 0.4,
+      "max": 8.0,
+      "default": 2.3,
+      "step": 0.01,
+      "group": "Ore glow intensity",
+      "langKey": "option.NL_GLOW_TEX"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GLOW_SHIMMER_SPEED",
+      "min": 0.5,
+      "max": 2.0,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Ore glow intensity",
+      "langKey": "option.NL_GLOW_SHIMMER_SPEED"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GLOW_LEAK",
+      "min": 0.08,
+      "max": 1.0,
+      "default": 0.6,
+      "step": 0.01,
+      "group": "Ore glow intensity",
+      "langKey": "option.NL_GLOW_LEAK"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_PLANTS_WAVE",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.05,
+      "step": 0.01,
+      "group": "Waving",
+      "langKey": "option.NL_PLANTS_WAVE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_LANTERN_WAVE",
+      "min": 0.0,
+      "max": 0.4,
+      "default": 0.16,
+      "step": 0.01,
+      "group": "Waving",
+      "langKey": "option.NL_LANTERN_WAVE"
+    },
+    {
+      "type": "vec4",
+      "macro": "NL_WAVE_SPEED",
+      "min": 0.0,
+      "max": 5.6,
+      "default": 2.8,
+      "step": 0.01,
+      "group": "Waving",
+      "langKey": "option.NL_WAVE_SPEED",
+      "kind": "uniform",
+      "control": "slider",
+      "material": "*",
+      "uniform": "RDL_WindSpeed",
+      "components": [
+        0
+      ]
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_EXTRA_PLANTS_WAVE",
+      "default": false,
+      "group": "Waving",
+      "langKey": "option.NL_EXTRA_PLANTS_WAVE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WAVE_RANGE",
+      "min": 0.0,
+      "max": 26.0,
+      "default": 13.0,
+      "step": 1.0,
+      "group": "Waving",
+      "langKey": "option.NL_WAVE_RANGE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WATER_TRANSPARENCY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Water",
+      "langKey": "option.NL_WATER_TRANSPARENCY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WATER_BUMP",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.09,
+      "step": 0.01,
+      "group": "Water",
+      "langKey": "option.NL_WATER_BUMP"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WATER_WAVE_SPEED",
+      "min": 0.0,
+      "max": 1.6,
+      "default": 0.8,
+      "step": 0.01,
+      "group": "Water",
+      "langKey": "option.NL_WATER_WAVE_SPEED"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WATER_TEX_OPACITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.3,
+      "step": 0.01,
+      "group": "Water",
+      "langKey": "option.NL_WATER_TEX_OPACITY"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_WATER_WAVE",
+      "default": true,
+      "group": "Water",
+      "langKey": "option.NL_WATER_WAVE"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_WATER_REFL_MASK",
+      "default": false,
+      "group": "Water",
+      "langKey": "option.NL_WATER_REFL_MASK"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_UNDERWATER_BRIGHTNESS",
+      "min": 0.0,
+      "max": 3.0,
+      "default": 0.8,
+      "step": 0.01,
+      "group": "Underwater",
+      "langKey": "option.NL_UNDERWATER_BRIGHTNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CAUSTIC_INTENSITY",
+      "min": 0.5,
+      "max": 5.0,
+      "default": 1.9,
+      "step": 0.01,
+      "group": "Underwater",
+      "langKey": "option.NL_CAUSTIC_INTENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_UNDERWATER_WAVE",
+      "min": 0.02,
+      "max": 0.6,
+      "default": 0.1,
+      "step": 0.01,
+      "group": "Underwater",
+      "langKey": "option.NL_UNDERWATER_WAVE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD0_THICKNESS",
+      "min": 0.0,
+      "max": 4.2,
+      "default": 2.1,
+      "step": 0.01,
+      "group": "Vanilla cloud settings - make sure to remove clouds.png when using this",
+      "langKey": "option.NL_CLOUD0_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD0_RAIN_THICKNESS",
+      "min": 0.0,
+      "max": 8.0,
+      "default": 4.0,
+      "step": 1.0,
+      "group": "Vanilla cloud settings - make sure to remove clouds.png when using this",
+      "langKey": "option.NL_CLOUD0_RAIN_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD0_OPACITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Vanilla cloud settings - make sure to remove clouds.png when using this",
+      "langKey": "option.NL_CLOUD0_OPACITY"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_CLOUD0_MULTILAYER",
+      "default": true,
+      "group": "Vanilla cloud settings - make sure to remove clouds.png when using this",
+      "langKey": "option.NL_CLOUD0_MULTILAYER"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD1_DEPTH",
+      "min": 0.0,
+      "max": 2.6,
+      "default": 1.3,
+      "step": 0.01,
+      "group": "Soft cloud settings",
+      "langKey": "option.NL_CLOUD1_DEPTH"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD1_SPEED",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.04,
+      "step": 0.01,
+      "group": "Soft cloud settings",
+      "langKey": "option.NL_CLOUD1_SPEED"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD1_DENSITY",
+      "min": 0.0,
+      "max": 1.08,
+      "default": 0.54,
+      "step": 0.01,
+      "group": "Soft cloud settings",
+      "langKey": "option.NL_CLOUD1_DENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD1_OPACITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Soft cloud settings",
+      "langKey": "option.NL_CLOUD1_OPACITY"
+    },
+    {
+      "type": "vec4",
+      "control": "slider",
+      "kind": "uniform",
+      "name": "NL_CLOUD_HEIGHT",
+      "macro": "NL_CLOUD_HEIGHT",
+      "material": "*",
+      "uniform": "RDL_CloudHeight",
+      "components": [
+        0
+      ],
+      "min": -128.0,
+      "max": 128.0,
+      "default": 0.0,
+      "step": 1.0,
+      "group": "Soft cloud settings",
+      "langKey": "option.NL_CLOUD_HEIGHT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_THICKNESS",
+      "min": 0.0,
+      "max": 4.2,
+      "default": 2.1,
+      "step": 0.01,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_RAIN_THICKNESS",
+      "min": 0.0,
+      "max": 5.0,
+      "default": 2.5,
+      "step": 0.01,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_RAIN_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_STEPS",
+      "min": 0.0,
+      "max": 10.0,
+      "default": 5.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_STEPS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_DENSITY",
+      "min": 0.0,
+      "max": 50.0,
+      "default": 25.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_DENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_VELOCITY",
+      "min": 0.0,
+      "max": 1.6,
+      "default": 0.8,
+      "step": 0.01,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_VELOCITY"
+    },
+    {
+      "type": "toggle",
+      "macro": "NL_CLOUD2_LAYER2",
+      "default": false,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_OFFSET",
+      "min": 30.0,
+      "max": 300.0,
+      "default": 143.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_OFFSET"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_THICKNESS",
+      "min": 0.0,
+      "max": 5.0,
+      "default": 2.5,
+      "step": 0.01,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_RAIN_THICKNESS",
+      "min": 0.0,
+      "max": 6.0,
+      "default": 3.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_RAIN_THICKNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_STEPS",
+      "min": 0.0,
+      "max": 6.0,
+      "default": 3.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_STEPS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_DENSITY",
+      "min": 0.0,
+      "max": 50.0,
+      "default": 25.0,
+      "step": 1.0,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_DENSITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD2_LAYER2_VELOCITY",
+      "min": 0.0,
+      "max": 1.6,
+      "default": 0.8,
+      "step": 0.01,
+      "group": "Rounded cloud settings",
+      "langKey": "option.NL_CLOUD2_LAYER2_VELOCITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD3_SPEED",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.005,
+      "step": 0.01,
+      "group": "Realistic cloud settings",
+      "langKey": "option.NL_CLOUD3_SPEED"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD3_SHADOW",
+      "min": 0.1,
+      "max": 1.0,
+      "default": 0.9,
+      "step": 0.01,
+      "group": "Realistic cloud settings",
+      "langKey": "option.NL_CLOUD3_SHADOW"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_CLOUD3_SHADOW_OFFSET",
+      "min": 0.05,
+      "max": 1.0,
+      "default": 0.3,
+      "step": 0.01,
+      "group": "Realistic cloud settings",
+      "langKey": "option.NL_CLOUD3_SHADOW_OFFSET"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_AURORA",
+      "min": 0.0,
+      "max": 2.4,
+      "default": 1.2,
+      "step": 0.01,
+      "group": "Aurora settings",
+      "langKey": "option.NL_AURORA"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_AURORA_VELOCITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.03,
+      "step": 0.01,
+      "group": "Aurora settings",
+      "langKey": "option.NL_AURORA_VELOCITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_AURORA_SCALE",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.04,
+      "step": 0.01,
+      "group": "Aurora settings",
+      "langKey": "option.NL_AURORA_SCALE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_AURORA_WIDTH",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.18,
+      "step": 0.01,
+      "group": "Aurora settings",
+      "langKey": "option.NL_AURORA_WIDTH"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SHOOTING_STAR_PERIOD",
+      "min": 0.0,
+      "max": 12.0,
+      "default": 6.0,
+      "step": 1.0,
+      "group": "Shooting star",
+      "langKey": "option.NL_SHOOTING_STAR_PERIOD"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SHOOTING_STAR_DELAY",
+      "min": 0.0,
+      "max": 128.0,
+      "default": 64.0,
+      "step": 1.0,
+      "group": "Shooting star",
+      "langKey": "option.NL_SHOOTING_STAR_DELAY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GALAXY_STARS",
+      "min": 0.0,
+      "max": 4.0,
+      "default": 2.0,
+      "step": 1.0,
+      "group": "Galaxy",
+      "langKey": "option.NL_GALAXY_STARS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GALAXY_VIBRANCE",
+      "min": 0.0,
+      "max": 1.4,
+      "default": 0.7,
+      "step": 0.01,
+      "group": "Galaxy",
+      "langKey": "option.NL_GALAXY_VIBRANCE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GALAXY_SPEED",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.03,
+      "step": 0.01,
+      "group": "Galaxy",
+      "langKey": "option.NL_GALAXY_SPEED"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GALAXY_DAY_VISIBILITY",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0,
+      "step": 1.0,
+      "group": "Galaxy",
+      "langKey": "option.NL_GALAXY_DAY_VISIBILITY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SUN_SIZE",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_SUN_SIZE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_MOON_SIZE",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_MOON_SIZE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SUN_PATH_YAW",
+      "min": 0.0,
+      "max": 30.0,
+      "default": 15.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_SUN_PATH_YAW"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_MOON_PATH_YAW",
+      "min": 0.0,
+      "max": 34.0,
+      "default": 17.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_MOON_PATH_YAW"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SUN_PATH_TILT",
+      "min": 0.0,
+      "max": 62.0,
+      "default": 31.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_SUN_PATH_TILT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_MOON_PATH_TILT",
+      "min": 0.0,
+      "max": 56.0,
+      "default": -28.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_MOON_PATH_TILT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_SUN_TILT",
+      "min": 0.0,
+      "max": 90.0,
+      "default": 45.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_SUN_TILT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_MOON_TILT",
+      "min": 0.0,
+      "max": 90.0,
+      "default": 45.0,
+      "step": 1.0,
+      "group": "Sun/Moon",
+      "langKey": "option.NL_MOON_TILT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GODRAY",
+      "min": 0.1,
+      "max": 0.8,
+      "default": 0.3,
+      "step": 0.01,
+      "group": "Fake godrays during sunrise/sunset",
+      "langKey": "option.NL_GODRAY"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GROUND_REFL",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.4,
+      "step": 0.01,
+      "group": "Sky reflection",
+      "langKey": "option.NL_GROUND_REFL"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_GROUND_RAIN_WETNESS",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 1.0,
+      "group": "Sky reflection",
+      "langKey": "option.NL_GROUND_RAIN_WETNESS"
+    },
+    {
+      "type": "vec4",
+      "macro": "NL_GROUND_RAIN_PUDDLES",
+      "min": 0.0,
+      "max": 1.4,
+      "default": 0.7,
+      "step": 0.01,
+      "group": "Sky reflection",
+      "langKey": "option.NL_GROUND_RAIN_PUDDLES",
+      "kind": "uniform",
+      "control": "slider",
+      "material": "*",
+      "uniform": "RDL_WaterPuddles",
+      "components": [
+        0
+      ]
+    },
+    {
+      "type": "slider",
+      "macro": "NL_ENTITY_BRIGHTNESS",
+      "min": 0.1,
+      "max": 1.6,
+      "default": 0.65,
+      "step": 0.01,
+      "group": "Entity (Actor, ItemInHand)",
+      "langKey": "option.NL_ENTITY_BRIGHTNESS"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WEATHER_RAIN_SLANT",
+      "min": 1.0,
+      "max": 8.0,
+      "default": 4.0,
+      "step": 1.0,
+      "group": "Weather particles",
+      "langKey": "option.NL_WEATHER_RAIN_SLANT"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_WEATHER_PARTICLE_SIZE",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 1.0,
+      "group": "Weather particles",
+      "langKey": "option.NL_WEATHER_PARTICLE_SIZE"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_LAVA_NOISE_BUMP",
+      "min": 0.1,
+      "max": 0.8,
+      "default": 0.2,
+      "step": 0.01,
+      "group": "Lava effects",
+      "langKey": "option.NL_LAVA_NOISE_BUMP"
+    },
+    {
+      "type": "slider",
+      "macro": "NL_LAVA_NOISE_SPEED",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.2,
+      "step": 0.01,
+      "group": "Lava effects",
+      "langKey": "option.NL_LAVA_NOISE_SPEED"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "packVersion": 1,
+  "name": "NewbX",
+  "gameVersion": "1.26.51",
+  "defaultPreset": "default",
+  "profiles": [
+    "windows",
+    "shading"
+  ],
+  "backend": "shaderc",
+  "presets": [
+    {
+      "id": "default",
+      "label": "Default",
+      "settings": "presets/default/settings.txt",
+      "bins": "presets/default/renderer/materials"
+    }
+  ]
+}

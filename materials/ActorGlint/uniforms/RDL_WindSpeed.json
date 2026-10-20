@@ -1,0 +1,11 @@
+{
+  "name": "RDL_WindSpeed",
+  "type": "vec4",
+  "count": 1,
+  "default": [
+    2.8,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

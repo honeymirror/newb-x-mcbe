@@ -1,0 +1,84 @@
+{
+  "variants": [
+    {
+      "id": "realistic_clouds",
+      "label": "Realistic clouds",
+      "macros": [
+        "REALISTIC_CLOUDS"
+      ],
+      "materials": [
+        "Clouds",
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "rounded_clouds",
+      "label": "Rounded Clouds",
+      "macros": [
+        "ROUNDED_CLOUDS"
+      ],
+      "materials": [
+        "Clouds"
+      ]
+    },
+    {
+      "id": "box_clouds",
+      "label": "Box Clouds",
+      "macros": [
+        "BOX_CLOUDS"
+      ],
+      "materials": [
+        "Clouds",
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "chunk_anim",
+      "label": "Chunk loading animation",
+      "macros": [
+        "CHUNK_ANIM"
+      ],
+      "materials": [
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "no_wave_no_fog",
+      "label": "No fog and wave effects",
+      "macros": [
+        "NO_WAVE_NO_FOG"
+      ],
+      "materials": [
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "no_fog",
+      "label": "No fog effect",
+      "macros": [
+        "NO_FOG"
+      ],
+      "materials": [
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "no_wave",
+      "label": "No wave effects",
+      "macros": [
+        "NO_WAVE"
+      ],
+      "materials": [
+        "RenderChunk"
+      ]
+    },
+    {
+      "id": "default",
+      "label": "Default",
+      "macros": [
+        "DEFAULT"
+      ],
+      "materials": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "RDL_WaterPuddles",
+  "type": "vec4",
+  "count": 1,
+  "default": [
+    0.7,
+    0.0,
+    0.0,
+    0.0
+  ]
+}
